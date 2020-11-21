@@ -27,7 +27,7 @@ define('BASEDIR',dirname(dirname(__file__)).'/');
 $set=array(); //Variable schützen
 
 //Setup suchen
-if ( file_exists(BASEDIR.'setup/index.php') ) die('Bitte löschen Sie zuerst den Ordner "setup"!');
+if ( file_exists(BASEDIR.'setup/index.php') ) die('Bitte l&ouml;schen Sie zuerst den Ordner "setup"!');
 
 //Globale Module und Funktionen laden
 require_once(BASEDIR.'lib/config.php');

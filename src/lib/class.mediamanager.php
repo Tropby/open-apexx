@@ -24,7 +24,7 @@ if ( !defined('APXRUN') ) die('You are not allowed to execute this file directly
 class mediamanager {
 
 //STARTUP
-function mediamanager() {
+function __construct() {
 	umask(0); //CHMOD
 	
 	if ( isset($_REQUEST['dir']) )     $_REQUEST['dir']=$this->securepath($_REQUEST['dir']);

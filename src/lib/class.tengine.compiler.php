@@ -38,7 +38,7 @@ var $mod=array(
 
 
 //Startup
-function tengine_compiler($filename) {
+function __construct($filename) {
 	if ( !$filename ) die('<br /><b>fatal error:</b> missing filename!<br />');
 	
 	//Datei setzen

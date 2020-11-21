@@ -12,7 +12,7 @@ class LineReader {
 	
 	
 	//Konstrukor
-	function LineReader($filepath, $end = "\n", $length = 102400) {
+	function __construct($filepath, $end = "\n", $length = 102400) {
 		$this->filepath = $filepath;
 		if ( is_int($length) && $length>0 ) {
 			$this->length = $length;
