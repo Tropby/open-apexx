@@ -2,7 +2,7 @@
 
 ## Status
 
-### Open Apexx Erweiterung by Tropby**
+### Open Apexx Erweiterung by Tropby
 
 Ich verwende schon seit sehr langer Zeit das Apexx bzw. Open Apexx. Daher habe ich beschlossen dieses weiter zu entwickeln und versuche dabei die Kompatibilität mit dem Open Apexx soweit wie möglich zu behalten. Die Änderungen werden sich auf neue PHP-Versionen und Verbesserungen bzw. Sicherheitsupdate belaufen. Um besser mit den Modulen arbeiten zu können werde ich pro Modul ein Repository anlegen und einen kleinen Modul-Manager schreiben der es ermöglicht Module nachzuinstallieren. Der Status der Module kann in der [Modulliste](MODULES.md) eingesehen werden.
 
@@ -42,6 +42,14 @@ Bitte prüfen Sie die Systemanforderungen, bevor Sie die Software installieren:
  * PHP Erweiterung curl
  * PHP Erweiterung zip (optional)
  * MySQL 4.0+
+ 
+# Module im Modul-Manager
+
+|Modul|Beschreibung|Source Code|Releases|
+|-----|------------|-----------|--------|
+|Hello World|Ein kleines Paket was die Grundlagen eines Paketes darstellt.|[src](https://github.com/Tropby/open-apexx-helloworld)|[releases](https://github.com/Tropby/open-apexx-helloworld/releases)|
+|Sitemap|Zeigt den inhalt der kompletten Seite an (Modul support vorrausgesetzt). Kann den Inhalt im Google Sitemap XML-Format anzeigen.|[src](https://github.com/Tropby/open-apexx-sitemap)|[releases](https://github.com/Tropby/open-apexx-sitemap/releases)|
+
 
 # Software aktualisieren
 
