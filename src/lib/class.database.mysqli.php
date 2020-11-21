@@ -75,7 +75,7 @@ class database extends mysqli {
 	////////////////////////////////////////////////////////////////////////////////// -> INSERT / UPDATE
 
 	//Normale Datenbankanfrage
-	function query($query) {
+	function query($query, $resultmode = NULL) {
 	  $this->querystring=$query;
 
 		$this->bench_start();
