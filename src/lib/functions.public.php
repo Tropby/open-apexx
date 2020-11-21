@@ -341,6 +341,7 @@ function insertboxes($text) {
 function cronexec() {
 	global $set,$apx,$db;
 	$now=time();
+	$cronexec=array();
 	
 	$data=$db->fetch("SELECT funcname,period,lastexec FROM ".PRE."_cron WHERE lastexec+period<='".$now."'");
 	if ( count($data) ) {

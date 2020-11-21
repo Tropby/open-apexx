@@ -34,7 +34,8 @@ function templates() {
 	$this->assign_static('ACTIVE_MODULE',$apx->module());
 	$this->assign_static('ACTIVE_ACTION',$apx->action());
 	$this->assign_static('SET_MAXUPLOAD',str_replace('M','MB',ini_get('upload_max_filesize')));
-	$this->assign_static('SID',SID);
+	if( defined("SID") )
+		$this->assign_static('SID',SID);
 	$this->assign_static('SERVER_REQUEST_METHOD',$_SERVER['REQUEST_METHOD']);
 	
 	//Benutzerinfos
