@@ -1,9 +1,12 @@
-Open Apexx
-==========
+# Open Apexx
 
-Status
-------
-⚠️ **Das Projekt "Open Apexx" ist offiziell beendet** (2020-10-24)
+## Status
+
+### Open Apexx Erweiterung by Tropby**
+
+Ich verwende schon seit sehr langer Zeit das Apexx bzw. Open Apexx. Daher habe ich beschlossen dieses weiter zu entwickeln und versuche dabei die Kompatibilität mit dem Open Apexx soweit wie möglich zu behalten. Die Änderungen werden sich auf neue PHP-Versionen und Verbesserungen bzw. Sicherheitsupdate belaufen. Um besser mit den Modulen arbeiten zu können werde ich pro Modul ein Repository anlegen und einen kleinen Modul-Manager schreiben der es ermöglicht Module nachzuinstallieren. Der Status der Module kann in der [Modulliste](MODULES.md) eingesehen werden.
+
+### Open Apexx by Scheb
 
 15 Jahre nach dem ersten offiziellen Release ist es an der Zeit anzuerkennen, dass die Software heutigen Ansprüchen
 (und auch meinen eigenen) nicht mehr genügen kann und eine sinnvolle Weiterentwicklung - so der man sich auch bemühen
@@ -14,17 +17,8 @@ Interessierten Software-Archäologen, die ein Faible für Software aus dem PHP4-
 Fork zu machen und sie an anderer Stelle weiterzuentwickeln. Dieses offizielle *Open Apexx* Repository wird
 jedenfalls keine Issues und Pull Requests mehr annehmen.
 
-**Was heißt das für dieses Repository?**
+# Was ist "Open Apexx"?
 
-1) Dieses Repository wird weiterhin dauerhaft verfügbar bleiben.
-2) Es wird weiterhin möglich sein Issues zu erstellen, um einen Austausch zu ermöglichen.
-3) Es wird keine garantierte Weiterentwicklung der Software geben (neue Features, Bugfixes). D.h. Ideen und
-   Änderungswünsche werden in diesem Repository nicht mehr umgesetzt werden, Pull Requests werden nicht mehr angenommen.
-   Es kann gelegentliche kleine Updates zu Kompatibilitätszwecken geben, da ich die Software selbst noch einsetze. Diese
-   sind jedoch nicht garantiert.
-
-Was ist "Open Apexx"?
----------------------
 apexx ist ein CMS in PHP, das ursprünglich von Christian Scheb entwickelt und auf http://www.stylemotion.de als
 kommerzielle Software vertrieben wurde.
 
@@ -37,8 +31,7 @@ betreiben möglichen.
 
 Das System ist nur auf Deutsch verfügbar, es besitzt jedoch Funktionen zur Lokalisierung.
 
-Systemanforderung
------------------
+# Systemanforderung
 
 Bitte prüfen Sie die Systemanforderungen, bevor Sie die Software installieren:
 
@@ -50,13 +43,10 @@ Bitte prüfen Sie die Systemanforderungen, bevor Sie die Software installieren:
  * PHP Erweiterung zip (optional)
  * MySQL 4.0+
 
-Software aktualisieren
-----------------------
+# Software aktualisieren
 
 Siehe [UPGRADE.md](UPGRADE.md).
 
-
-Dokumentation
--------------
+# Dokumentation
 
 Die original Dokumentation befindet sich im **doc** Ordner. 
