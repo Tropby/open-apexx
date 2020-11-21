@@ -1,0 +1,2 @@
+sitemap;Tropby;open-apexx-sitemap
+helloworld;Tropby;open-apexx-helloworld
