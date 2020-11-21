@@ -325,7 +325,6 @@ function mshow_refresh() {
 	}
 	@closedir($listdir);
 	
-	header("HTTP/1.1 301 Moved Permanently");
 	header('Location: action.php?action=main.mshow');
 }
 
@@ -346,7 +345,6 @@ function menable() {
 			
 			//Nix zu tun
 			if ( !count($modules) ) {
-				header("HTTP/1.1 301 Moved Permanently");
 				header('Location: action.php?action=main.mshow');
 				return;
 			}

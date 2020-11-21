@@ -110,13 +110,17 @@ class RecursiveTree {
 			WHERE parents='".addslashes($parents)."' ".($where ? ' AND '.$where : '')."
 			ORDER BY ord ASC
 		");
-		while ( $res = $query->fetch_array() ) {
-			$res = $this->processResult($res);
-			$res['level'] = $level;
-			$result[] = $res;
-			if ( $res['children'] ) {
-				$result = array_merge($result, $this->getTreeRec($parents.$res[$this->primary].'|', $payload, $where, $level+1));
-			}
+		
+		if( $query )
+		{
+			while ( $res = $query->fetch_array() ) {
+				$res = $this->processResult($res);
+				$res['level'] = $level;
+				$result[] = $res;
+				if ( $res['children'] ) {
+					$result = array_merge($result, $this->getTreeRec($parents.$res[$this->primary].'|', $payload, $where, $level+1));
+				}
+			}			
 		}
 		
 		return $result;
