@@ -84,7 +84,6 @@ function prepare_vars() {
 function strpsl($array) {
 	static $trimvars,$magicquotes;
 	if ( !isset($trimvars) ) $trimvars=iif((int)$_REQUEST['apx_notrim'] && MODE=='admin',0,1);
-	if ( !isset($magicquotes) ) $magicquotes=get_magic_quotes_gpc();
 
 	foreach($array AS $key => $val) {
 		if( is_array($val) ) {
@@ -93,7 +92,7 @@ function strpsl($array) {
 		}
 
 		if ( $trimvars ) $val=trim($val);
-		if ( $magicquotes ) $val=stripslashes($val);
+		$val=stripslashes($val);
 		$array[$key]=$val;
 	}
 
