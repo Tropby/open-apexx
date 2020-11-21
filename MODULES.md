@@ -1,0 +1,31 @@
+# Modul Status
+
+Um besser mit Modulen umgehen zu können werden die Module in eigene repositories extrahiert. In dieser Datei wird der Status dieses Vorgangs festgehalten.
+
+|Modul|Status|Version|Repository|
+|---|---|---|---|
+|affiliates|todo|?.?|?|
+|articles|todo|?.?|?|
+|banner|todo|?.?|?|
+|calendar|todo|?.?|?|
+|comments|todo|?.?|?|
+|contact|todo|?.?|?|
+|content|todo|?.?|?|
+|downloads|todo|?.?|?|
+|faq|todo|?.?|?|
+|formmailer|todo|?.?|?|
+|forum|todo|?.?|?|
+|gallery|todo|?.?|?|
+|glossar|todo|?.?|?|
+|guestbook|todo|?.?|?|
+|links|todo|?.?|?|
+|navi|todo|?.?|?|
+|news|todo|?.?|?|
+|newsletter|todo|?.?|?|
+|poll|todo|?.?|?|
+|products|todo|?.?|?|
+|ratings|todo|?.?|?|
+|teaser|todo|?.?|?|
+|twitter|todo|?.?|?|
+|user|todo|?.?|?|
+|videos|todo|?.?|?|
