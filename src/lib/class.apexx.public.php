@@ -27,17 +27,17 @@ var $active_section;
 
 
 //STARTUP
-function apexx_public() {
-	parent::apexx();
+function __construct() {
+	parent::__construct();
 }
 
 
-//Sektion wÃ¤hlen
+//Sektion wählen
 function init_section() {
 	global $set;
 	$_REQUEST['sec']=(int)$_REQUEST['sec'];
 	
-	//Sektion auswÃ¤hlen
+	//Sektion auswählen
 	if ( $_REQUEST['sec'] && isset($this->sections[$_REQUEST['sec']]) && $this->sections[$_REQUEST['sec']]['active'] ) {
 		$this->section_check($_REQUEST['sec']);
 		$this->section_id($_REQUEST['sec']);
@@ -76,7 +76,7 @@ function section_check($id) {
 		if ( !is_array($secacc) ) $secacc=array();
 	}
 	
-	//BeschrÃ¤nkung durch Benutzergruppe
+	//Beschränkung durch Benutzergruppe
 	if ( $secacc!='all' && !in_array($id,$secacc) && $id!=$this->section_default ) {
 		$this->lang->init(); //Sprachpaket ist noch nicht initialisiert!
 		$indexpage=mklink('index.php','index.html',$this->section_default);

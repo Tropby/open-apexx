@@ -29,8 +29,8 @@ var $session;
 
 
 //STARTUP
-function apexx_admin() {
-	parent::apexx();
+function __construct() {
+	parent::__construct();
 	if ( !$_REQUEST['action'] ) $_REQUEST['action']='main.index';
 	
 	$loadmodule=explode('.',$_REQUEST['action']);

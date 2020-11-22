@@ -26,11 +26,11 @@ var $headline=array();
 ////////////////////////////////////////////////////////////////////////////////// -> STARTUP
 
 
-function templates() {
+function __construct() {
 	global $apx,$set;
 	
 	$this->assign_static('CHARSET',$set['main']['charset']);
-	$this->assign_static('ACTIVE_MODULE',''); //Alt, Abwärtskompatiblität
+	$this->assign_static('ACTIVE_MODULE',''); //Alt, Abwï¿½rtskompatiblitï¿½t
 	$this->assign_static('APEXX_MODULE','');
 	
 	//Basis
@@ -56,7 +56,7 @@ function templates() {
 	}
 	
 	ob_start();
-	parent::tengine(true);
+	parent::__construct(true);
 }
 
 

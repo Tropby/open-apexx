@@ -32,7 +32,7 @@ var $whois=false;
 var $theme='default';
 
 
-function tengine($firsttime=false) {
+function __construct($firsttime=false) {
 	global $set,$apx;
 	
 	//Einstellungen

@@ -45,7 +45,7 @@ var $coremodules=array('main','mediamanager','user');
 ////////////////////////////////////////////////////////////////////////////////// -> STARTUP
 
 //System starten
-function apexx() {
+function __construct() {
 	global $set;
 
 	error_reporting(E_ALL ^ E_NOTICE ^ E_STRICT ^ E_DEPRECATED);
@@ -79,7 +79,7 @@ function apexx() {
 
 
 
-//ï¿½bergebene Variable vorbereiten
+//Übergebene Variable vorbereiten
 function prepare_vars() {
 	if ( isset($_REQUEST) && is_array($_REQUEST) ) $_REQUEST=$this->strpsl($_REQUEST);
 	if ( isset($_POST) && is_array($_POST) ) $_POST=$this->strpsl($_POST);
@@ -147,14 +147,14 @@ function get_http() {
 
 
 function is_https() {
-    return (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || $_SERVER['SERVER_PORT'] == 443;
+    return (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || (isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == 443);
 }
 
 
 //Ordner
 function get_dir() {
 
-	//Quellvariable auswï¿½hlen
+	//Quellvariable auswählen
 	if ( isset($_SERVER['SCRIPT_NAME']) ) $source=$_SERVER['SCRIPT_NAME'];
 	else {
 		$source=$_SERVER['PHP_SELF'];

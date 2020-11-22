@@ -35,7 +35,7 @@ class database extends mysqli {
 	////////////////////////////////////////////////////////////////////////////////// -> STARTUP + END
 
 	//Verbindung herstellen
-	function database($server, $user, $password, $database, $utf8 = false) {
+	function __construct($server, $user, $password, $database, $utf8 = false) {
 		parent::__construct($server, $user, $password);
 		if ( $this->connect_error ) {
 			error("Verbindung konnte nicht hergestellt werden!<br />MySQL meldet: ".$this->connect_error, 1);

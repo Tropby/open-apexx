@@ -35,7 +35,7 @@ class database {
 	////////////////////////////////////////////////////////////////////////////////// -> STARTUP + END
 	
 	//Verbindung herstellen
-	function database($server, $user, $password, $database, $utf8 = false) {
+	function __construct($server, $user, $password, $database, $utf8 = false) {
 		$this->conn = mysql_connect($server, $user, $password);
 		if ( !$this->conn ) {
 			error("Verbindung konnte nicht hergestellt werden!<br />MySQL meldet: ".mysql_error($this->conn), 1);

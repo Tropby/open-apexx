@@ -27,7 +27,7 @@ class session {
 	
 	
 	//Session erzeugen
-	function session($varname = 'sid') {
+	function __construct($varname = 'sid') {
 		$this->varname = $varname;
 		$this->now = time();
 		$this->ownerId = $this->getOwnerId();
@@ -38,7 +38,7 @@ class session {
 			$this->resumeSession();
 		}
 		
-		//Neue Session erzeugen wenn Übernahme gescheitert oder keine Sid
+		//Neue Session erzeugen wenn üernahme gescheitert oder keine Sid
 		if ( !$this->sessionId ) {
 			$this->createSession();
 		}

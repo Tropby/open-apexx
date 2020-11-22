@@ -25,7 +25,7 @@ var $tabletmpl;
 var $layer;
 
 
-function html() {
+function __construct() {
 	global $apx;
 	$this->tmpl=&$apx->tmpl;
 }
