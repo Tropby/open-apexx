@@ -164,4 +164,29 @@ function main_sections($template='sections') {
 	$tmpl->parse('functions/'.$template,'main');
 }
 
+// Creates a select input for year selection
+function main_yearselect($name, $selected, $classes)
+{
+	$tmpl = new tengine();
+
+	$year = date("Y");
+	$yearlist = array();
+	$yearlist[] = array(
+		"VALUE" => "",
+		"SELECTED" => false
+	);	
+	for( $i = $year - 20; $i <= $year + 5; $i++ )
+	{
+		$yearlist[] = array(
+			"VALUE" => $i,
+			"SELECTED" => $i == $selected 
+		);
+	}
+
+	$tmpl->assign('OPTIONS', $yearlist);
+	$tmpl->assign('NAME', $name );
+	$tmpl->assign('CLASSES', $classes );
+	$tmpl->parse('functions/yearselect','main');
+}
+
 ?>

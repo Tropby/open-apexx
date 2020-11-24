@@ -22,7 +22,7 @@ $module = array(1,99999999,
 'id' => 'main',
 'dependence' => array(),
 'requirement' => array(),
-'version' => '1.2.2',
+'version' => '1.3.2',
 'author' => 'Christian Scheb',
 'contact' => 'http://www.stylemotion.de',
 'mediainput' => array(
@@ -82,6 +82,7 @@ $func['HEADLINE']=array('main_set_headline',true);
 $func['DESIGN']=array('main_set_design',true);
 $func['SNIPPET']=array('main_snippet',true);
 $func['SECTIONS']=array('main_sections',true);
+$func['YEARSELECT']=array('main_yearselect',true);
 
 //Admin-Template-Funktionen    F         V
 $afunc['TEXTAREA']=array('main_textbox',true);
