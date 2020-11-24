@@ -34,7 +34,7 @@ function save_menu() {
 	for ( var i=0; i<menu.length; i++ ) {
 		obj=getobject(menu[i]);
 		if ( obj.style.display!='none' ) {
-			document.cookie="apx_savedmenu["+menu[i]+"]=true; path=/; expires=Thu, 1 Jan 2020 00:00:00 GMT;";
+			document.cookie="apx_savedmenu["+menu[i]+"]=true; path=/; expires=Thu, 1 Jan 2040 00:00:00 GMT;";
 		}
 		else {
 			document.cookie="apx_savedmenu["+menu[i]+"]=false; path=/; expires=Thu, 1 Jan 1970 00:00:00 GMT;";

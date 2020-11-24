@@ -175,7 +175,7 @@ SortableNaviItem.prototype.close = function() {
 //Aufklapp-Status speichern
 SortableNaviItem.prototype.saveMenuState = function(theid, open) {
 	if ( open ) {
-		document.cookie="apx_open["+theid+"]=1; path=/; expires=Thu, 1 Jan 2020 00:00:00 GMT;";
+		document.cookie="apx_open["+theid+"]=1; path=/; expires=Thu, 1 Jan 2040 00:00:00 GMT;";
 	}
 	else {
 		document.cookie="apx_open["+theid+"]=0; path=/; expires=Thu, 1 Jan 1970 00:00:00 GMT;";
