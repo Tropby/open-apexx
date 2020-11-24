@@ -77,7 +77,7 @@ function templates() {
 	
 	ob_start();
 	
-	parent::tengine(true);
+	parent::__construct(true);
 }
 
 
