@@ -10,7 +10,7 @@ Um besser mit Modulen umgehen zu können werden die Module in eigene repositorie
 |calendar|todo|?.?|?|
 |comments|todo|?.?|?|
 |contact|todo|?.?|?|
-|content|todo|?.?|?|
+|content|released|1.1.2|[REPOS](https://github.com/Tropby/open-apexx-content)|
 |downloads|todo|?.?|?|
 |faq|released|1.1.1|[REPOS](https://github.com/Tropby/open-apexx-faq)|
 |formmailer|todo|?.?|?|
