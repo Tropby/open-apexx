@@ -217,5 +217,26 @@ function user_team($selected=0) {
 	}
 }
 
+//Liste der Gruppen ausgeben
+function user_groups($selected) {
+	global $set,$apx,$db;	
+
+	if( !is_array($selected) )
+		$selected = array();
+	
+	$numargs = func_num_args();
+	$arg_list = func_get_args();
+	for ($i = 0; $i < $numargs; $i++) {
+		$selected[] = $arg_list[$i];
+	}
+	
+	$data=$db->fetch("SELECT * FROM ".PRE."_user_groups AS a GROUP BY name ASC");
+	if ( !count($data) ) return;
+	
+	foreach ( $data AS $res ) {
+		echo '<option value="'.$res['groupid'].'"'.iif(in_array( $res['groupid'], $selected ),' selected="selected"').'>'.replace($res['name']).'</option>';
+	}
+}
+
 
 ?>

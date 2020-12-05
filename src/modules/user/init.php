@@ -21,7 +21,7 @@ $module = array(1,999999,
 'id' => 'user',
 'dependence' => array(),
 'requirement' => array('main' => '1.2.0'),
-'version' => '1.2.3',
+'version' => '1.2.4',
 'author' => 'Christian Scheb',
 'contact' => 'http://www.stylemotion.de'
 );
@@ -89,6 +89,7 @@ $func['USERSTATUS']=array('user_status',true);
 
 //Admin-Template-Funktionen       F         V
 $afunc['USER']=array('user_team',true);
+$afunc['USERGROUPS']=array('user_groups',true);
 
 /*
 F = Funktions-Name
