@@ -25,7 +25,7 @@ function mediamanager_inline($text) {
 	if ( !$found ) return $text;
 	
 	//Image IDs auslesen
-	preg_match_all('#{IMAGE\(( *[0-9]+ *)\)}#se',$text,$match);
+	preg_match_all('#{IMAGE\(( *[0-9]+ *)\)}#s',$text,$match);
 	$imageids=$match[1];
 	
 	if ( count($imageids) ) {
