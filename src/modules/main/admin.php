@@ -96,7 +96,7 @@ function mshow() {
 	
 	//Alle Modul-Informationen einlesen
 	$regmods=$this->get_modinfo();
-	
+
 	//Module, die nicht aktiv sind -> Sprachpaket laden
 	foreach ( $regmods AS $modulename => $module ) {
 		if ( in_array($modulename,$apx->coremodules) ) continue;
@@ -107,8 +107,10 @@ function mshow() {
 	echo'<p class="slink">&raquo; <a href="action.php?action=main.mshow&amp;do=refresh">'.$apx->lang->get('REFRESH').'</a></p>';
 	
 	$col[]=array('',1,'align="center"');
-	$col[]=array('COL_TITLE',70,'class="title"');
-	$col[]=array('COL_ID',30,'align="center"');
+	$col[]=array('COL_TITLE',50,'class="title"');
+	$col[]=array('COL_ID',20,'align="center"');
+	$col[]=array('COL_VERSION',15,'align="center"');
+	$col[]=array('COL_REQUIREMENTS',15,'align="center"');
 	
 	//STATISCHE MODULE
 	foreach ( $apx->coremodules AS $modulename ) {
@@ -126,6 +128,7 @@ function mshow() {
 		$alert.=$apx->lang->get('DEPENDENCE').': ';
 		if ( is_array($module['dependence']) && count($module['dependence']) ) $alert.=@implode(', ',$module['dependence']);
 		else $alert.=$apx->lang->get('NO');
+		$requiredModules = "";
 		if ( is_array($module['requirement']) && count($module['requirement']) ) {
 			$alert.='\n\n';
 			$alert.=$apx->lang->get('REQUIREMENTS').': ';
@@ -134,8 +137,27 @@ function mshow() {
 				++$ri;
 				if ( $ri>1 ) {
 					$alert.= ', ';
+					$requiredModules.=', ';
 				}
 				$alert.= $apx->lang->get('MODULENAME_'.strtoupper($reqModule)).' ('.$reqVersion.')';
+				$rm= $apx->lang->get('MODULENAME_'.strtoupper($reqModule)).' ('.$reqVersion.')';
+
+				if( isset( $regmods[$reqModule] ) && isset( $regmods[$reqModule]["installed_version"] ) )
+				{
+					if( $regmods[$reqModule]["installed_version"] >= intval(str_replace(".", "", $reqVersion)))
+					{
+						$requiredModules.= "<font color='green'>";
+					}
+					else
+					{
+						$requiredModules.= "<font color='red'>";
+					}
+				}
+				else
+				{
+					$requiredModules.= "<font color='red'>Module not found!";
+				}					
+				$requiredModules.= $rm."</font>";				
 			} 
 		}
 		$alert.='\n\n';
@@ -143,6 +165,16 @@ function mshow() {
 		$alert.=$apx->lang->get('CURRENTVERSION').': '.$module['current_version_dotted'];
 		if ( $module['installed_version']<$module['current_version'] ) $alert.='\n'.$apx->lang->get('UPDATEREQUIRED');
 		
+		$tabledata[$i]['COL4']=($module['installed_version']!=$module['current_version']?"<font color='red'>".$module['installed_version']." >> ".$module['current_version']."</font>":$module['installed_version']);
+		if( $module['installed_version'] == 0 )
+		{
+			$tabledata[$i]['COL4']="";
+		}
+		else
+		{
+			$tabledata[$i]['COL4']=($module['installed_version']!=$module['current_version']?"<font color='red'>Update ".$module['installed_version_dotted']." to ".$module['current_version_dotted']."</font>":$module['installed_version_dotted']);
+		}
+
 		//Optionen
 		$tabledata[$i]['OPTIONS'].='<a href="javascript:void(0)" onclick="alert(\''.$alert.'\')"><img src="design/info.gif" alt="" style="vertical-align:middle;" /></a>';
 		$tabledata[$i]['OPTIONS'].='<img src="design/ispace.gif" alt="" />';
@@ -181,6 +213,7 @@ function mshow() {
 			$alert.=$apx->lang->get('DEPENDENCE').': ';
 			if ( is_array($module['dependence']) && count($module['dependence']) ) $alert.=@implode(', ',$module['dependence']);
 			else $alert.=$apx->lang->get('NO');
+			$requiredModules = "";
 			if ( is_array($module['requirement']) && count($module['requirement']) ) {
 				$alert.='\n\n';
 				$alert.=$apx->lang->get('REQUIREMENTS').': ';
@@ -189,8 +222,27 @@ function mshow() {
 					++$ri;
 					if ( $ri>1 ) {
 						$alert.= ', ';
-					}
+						$requiredModules.='<br />';
+					}					
 					$alert.= $apx->lang->get('MODULENAME_'.strtoupper($reqModule)).' ('.$reqVersion.')';
+					$rm= $apx->lang->get('MODULENAME_'.strtoupper($reqModule)).' ('.$reqVersion.')';
+
+					if( isset( $regmods[$reqModule] ) && isset( $regmods[$reqModule]["installed_version"] ) )
+					{
+						if( $regmods[$reqModule]["installed_version"] >= intval(str_replace(".", "", $reqVersion)))
+						{
+							$requiredModules.= "<font color='green'>";
+						}
+						else
+						{
+							$requiredModules.= "<font color='red'>";
+						}
+					}
+					else
+					{
+						$requiredModules.= "<font color='red'>Module not found!";
+					}					
+					$requiredModules.= $rm."</font>";
 				} 
 			}
 			$alert.='\n\n';
@@ -198,6 +250,16 @@ function mshow() {
 			$alert.=$apx->lang->get('CURRENTVERSION').': '.$module['current_version_dotted'];
 			if ( $module['installed_version']<$module['current_version'] ) $alert.='\n'.$apx->lang->get('UPDATEREQUIRED');
 			
+			if( $module['installed_version'] == 0 )
+			{
+				$tabledata[$i]['COL4']="";
+			}
+			else
+			{
+				$tabledata[$i]['COL4']=($module['installed_version']!=$module['current_version']?"<font color='red'>Update ".$module['installed_version_dotted']." to ".$module['current_version_dotted']."</font>":$module['installed_version_dotted']);
+			}
+			$tabledata[$i]['COL5']=$requiredModules;
+	
 			//Optionen
 			$tabledata[$i]['OPTIONS'].='<a href="javascript:void(0)" onclick="alert(\''.$alert.'\')"><img src="design/info.gif" alt="" style="vertical-align:middle;" /></a>';
 			
@@ -299,6 +361,7 @@ function checkRequirement($module, $allmodules) {
 	if ( !is_array($module['requirement']) ) return true;
 	foreach ( $module['requirement'] AS $reqModule => $reqVersion ) {
 		$reqVersion = intval(str_replace('.','',$reqVersion));
+
 		if ( !isset($allmodules[$reqModule]) ) {
 			return false;
 		}
