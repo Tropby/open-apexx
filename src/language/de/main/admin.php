@@ -508,7 +508,8 @@ $lang['actions']['env'] = array (
 'TMPLFUNC' => 'Platzhalter',
 'FUNCNAME' => 'Verknüpfte Funktion',
 'PARAMS' => 'Parameter?',
-'MODULE' => 'Modul'
+'MODULE' => 'Modul',
+'DESCRIPTION' => 'Beschreibung'
 );
 
 

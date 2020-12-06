@@ -2344,9 +2344,23 @@ function env() {
 	
 		foreach ( $funcs AS $name => $info ) {
 			++$i;
-			$funcdata[$i]['FUNC']='{'.$name.'()}';
+			$funcdata[$i]['FUNC']=$name;
 			$funcdata[$i]['FUNCNAME']=$info[0].'()';
 			$funcdata[$i]['PARAMS']=iif($info[1]==true,$apx->lang->get('YES'),$apx->lang->get('NO'));
+
+			$funcdata[$i]['DESCRIPTION'] = isset( $info[2] ) ? $info[2] : "";
+			$funcdata[$i]['PARAM_INFO'] = array();
+			if( isset( $info[3] ) )
+			{
+				foreach( $info[3] as $k => $v )
+				{
+					$funcdata[$i]['PARAM_INFO'][] = array(
+						"NAME" => $k,
+						"DESCRIPTION" => $v
+					);
+				}
+			}
+
 			$funcdata[$i]['MODULE']=$module;
 		}
 	}

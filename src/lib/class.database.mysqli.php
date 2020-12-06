@@ -258,7 +258,7 @@ class database extends mysqli {
 
 	//Server-Info
 	function server_info() {
-		$this->server_info;
+		return $this->server_info;
 	}
 
 
